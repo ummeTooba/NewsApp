@@ -1,0 +1,110 @@
+{
+  "status": "ok",
+  "totalResults": 8,
+  "articles": [
+  {
+  "source": {
+  "id": "google-news-uk",
+  "name": "Google News (UK)"
+  },
+  "author": "Sky Sports",
+  "title": "Ryder Cup: Europe regain trophy as Rory McIlroy and Viktor Hovland star in victory over USA in Rome - Sky Sports",
+  "description": null,
+  "url": "https://news.google.com/rss/articles/CBMilQFodHRwczovL3d3dy5za3lzcG9ydHMuY29tL2dvbGYvbmV3cy8xMjE3Ni8xMjk3NDE1Mi9yeWRlci1jdXAtZXVyb3BlLXJlZ2Fpbi10cm9waHktYXMtcm9yeS1tY2lscm95LWFuZC12aWt0b3ItaG92bGFuZC1zdGFyLWluLXZpY3Rvcnktb3Zlci11c2EtaW4tcm9tZdIBmQFodHRwczovL3d3dy5za3lzcG9ydHMuY29tL2FtcC9nb2xmL25ld3MvMTIxNzYvMTI5NzQxNTIvcnlkZXItY3VwLWV1cm9wZS1yZWdhaW4tdHJvcGh5LWFzLXJvcnktbWNpbHJveS1hbmQtdmlrdG9yLWhvdmxhbmQtc3Rhci1pbi12aWN0b3J5LW92ZXItdXNhLWluLXJvbWU?oc=5",
+  "urlToImage": null,
+  "publishedAt": "2023-10-01T15:56:15+00:00",
+  "content": null
+  },
+  {
+  "source": {
+  "id": "la-gaceta",
+  "name": "La Gaceta"
+  },
+  "author": "La Gaceta",
+  "title": "EN VIVO: Boca choca con River en el Superclásico del fútbol argentino",
+  "description": "El xeneize se mide con el millonario desde las 14. Transmiten ESPN Premium y TNT Sports.",
+  "url": "https://www.lagaceta.com.ar/nota/1008314/deportes/en-vivo-boca-choca-river-superclasico-futbol-argentino.html",
+  "urlToImage": "https://img.lagaceta.com.ar/fotos/notas/2023/10/01/en-vivo-boca-choca-river-superclasico-futbol-argentino-1008314-114105.jpg",
+  "publishedAt": "2023-10-01T15:52:10.6367863Z",
+  "content": "Lo que tenés que saber\r\nCon un equipo alternativo, Boca juega el Superclásico con River, que lleva siete partidos sin poder ganar de visitante, en una nueva edición del Superclásico, por la fecha 7 d… [+299 chars]"
+  },
+  {
+  "source": {
+  "id": "four-four-two",
+  "name": "FourFourTwo"
+  },
+  "author": "Ben Hayward",
+  "title": "VAR mistake in Spurs vs Liverpool 'really bad' but 'not sackable offence' –\nNeville",
+  "description": "The Sky Sports pundit has called for the vitriol to end after a bad error cost the Reds in Saturday's Premier League clash in London",
+  "url": "https://www.fourfourtwo.com/news/var-mistake-in-spurs-vs-liverpool-really-bad-but-not-sackable-offence-neville",
+  "urlToImage": "https://cdn.mos.cms.futurecdn.net/8kopGH78W5NGNDV4EdHrQ3-1200-80.jpg",
+  "publishedAt": "2023-10-01T14:30:00Z",
+  "content": "Manchester United legend Gary Neville has described the VAR error in Saturday's game between Tottenham and Liverpool as 'very bad', but believes a two-match suspension is sufficient for the officials… [+2663 chars]"
+  },
+  {
+  "source": {
+  "id": "news-com-au",
+  "name": "News.com.au"
+  },
+  "author": "Aisling Brennan",
+  "title": "State in total mourning after finals chaos",
+  "description": "Queensland sports fans have been left reeling after its four teams failed to win a single premiership during the 2023 grand finals weekend.",
+  "url": "https://www.news.com.au/sport/nrl/queensland-fails-to-win-any-premiership-cup-on-grand-finals-weekend/news-story/c28dc9fb0cca1d85a50b7b9d5b4617d7",
+  "urlToImage": "https://content.api.news/v3/images/bin/b8163668aa7a5c061c4b4a63fb62ccdb",
+  "publishedAt": "2023-10-01T11:05:00Z",
+  "content": "Queensland sports fans have been left reeling after its four teams failed to win a single premiership during the 2023 grand finals weekend.\r\nThe Brisbane Lions, Brisbane Broncos, the Gold Coast Titan… [+1475 chars]"
+  },
+  {
+  "source": {
+  "id": "bleacher-report",
+  "name": "Bleacher Report"
+  },
+  "author": null,
+  "title": "New Travis Hunter Show ",
+  "description": "Fan easier, fan faster and fan better with Bleacher Report. Keep up with the latest storylines, expert analysis, highlights and scores for all your favorite sports.",
+  "url": "https://bleacherreport.com/videos/464068-twelve-talks-with-travis-hunter-episode-5-vod",
+  "urlToImage": null,
+  "publishedAt": "2023-09-27T14:37:29.508984Z",
+  "content": "Copyright © 2023 Bleacher Report, Inc. Turner Broadcasting System, Inc.\r\n All Rights Reserved.\r\n BleacherReport.com is part of Bleacher Report Turner Sports Network, part of the Turner Sports and Ent… [+200 chars]"
+  },
+  {
+  "source": {
+  "id": "bleacher-report",
+  "name": "Bleacher Report"
+  },
+  "author": null,
+  "title": "⭐️ New Micah Parsons Show ⭐️",
+  "description": "Fan easier, fan faster and fan better with Bleacher Report. Keep up with the latest storylines, expert analysis, highlights and scores for all your favorite sports.",
+  "url": "https://bleacherreport.com/videos/464011-the-edge-with-micah-parsons-episode-3-vod",
+  "urlToImage": null,
+  "publishedAt": "2023-09-27T14:37:24.039991Z",
+  "content": "Copyright © 2023 Bleacher Report, Inc. Turner Broadcasting System, Inc.\r\n All Rights Reserved.\r\n BleacherReport.com is part of Bleacher Report Turner Sports Network, part of the Turner Sports and Ent… [+200 chars]"
+  },
+  {
+  "source": {
+  "id": "usa-today",
+  "name": "USA Today"
+  },
+  "author": null,
+  "title": "Daily Briefing",
+  "description": "The day's top stories, from sports to movies to politics to world events.",
+  "url": "https://profile.usatoday.com/newsletters/daily-briefing/",
+  "urlToImage": "https://profile.usatoday.com/newsletters/resources/usat/property/usatoday/newsletter-thumbs/8872UT-E-NLETTER02@2x.jpg",
+  "publishedAt": "2021-08-15T15:35:07+00:00",
+  "content": "The day's top stories, from sports to movies to politics to world events."
+  },
+  {
+  "source": {
+  "id": "nrk",
+  "name": "NRK"
+  },
+  "author": "NRK",
+  "title": "De siste sportsnyhetene fra NRK",
+  "description": "Her får du de siste sportsnyhetene fra NRK.",
+  "url": "https://www.nrk.no/sport/sportsnyheter-1.14660227#1.16578518.1.16578518",
+  "urlToImage": "https://gfx.nrk.no/7kT5zGoE2E-GnUKLojH1PQ0I1Nze4Ypu8lxM-oBjubQw.jpg",
+  "publishedAt": "2019-08-14T09:09:42Z",
+  "content": "30. september2023kl.20:32Like før Tottenham scoret kampens første (tellende) mål, sendte Liverpools Luis Díaz ballen i mål.\r\nMålet ble annullert for offside, men det skulle det ifølge dommerforeninge… [+1417 chars]"
+  }
+  ]
+  }
