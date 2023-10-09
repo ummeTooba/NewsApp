@@ -57,7 +57,7 @@ To run the app locally:
 
 ## Contributing
 
-Feel free to contribute to the development of NewsApp. If you encounter any issues or have suggestions, please open an [issue](https://github.com/your-username/NewsApp/issues) or submit a [pull request](https://github.com/your-username/NewsApp/pulls).
+Feel free to contribute to the development of NewsApp. If you encounter any issues or have suggestions, please open an [issue](https://github.com/your-username/NewsApp/issues) or submit a [pull request](https://github.com/ummeTooba/NewsApp/pulls).
 
 ## License
 
