@@ -1,66 +1,42 @@
-# NewsApp - React News Application
+# NewsApp
 
-NewsApp is a React-based News application that allows users to explore top headlines from various categories. This application is designed to provide insights into React's class component paradigm, utilizing props and class-based architecture.
+NewsApp is a React-based news application that provides the latest headlines from various categories. The app was initially built with class components for educational purposes, showcasing React's class component structure and state management. Subsequently, it has been refactored to utilize functional components, taking advantage of React's modern hooks, such as `useState` and `useEffect`.
 
 ## Features
 
 - **Top Headlines:** View the latest news headlines from different categories.
 - **Infinite Scrolling:** Seamlessly load more news articles as you scroll.
-- **Class Components:** Understand React's class component structure and state management.
+- **Functional Components:** Utilize React's modern functional components and hooks.
 - **API Integration:** Fetch real-time news data using the News API.
 - **Environment Variable:** Securely manage the News API key using environment variables.
 - **Top-Loading Bar:** Visual indicator of ongoing API requests and data loading.
 
 ## Getting Started
 
-### Prerequisites
-
-Before running the application, make sure you have the following installed:
-
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/ummeTooba/NewsApp.git
-   ## Getting Started
-
 To run the app locally:
 
-1. **Create a .env file:**
-   - Create a `.env` file in the root directory.
+1. Create a `.env` file in the root directory.
+2. Add `REACT_APP_API_KEY=your_actual_api_key` to the `.env` file.
+3. Run `npm install` to install dependencies.
+4. Run `npm start` to start the NewsApp.
 
-2. **Add your News API key:**
-   - Open the `.env` file.
-   - Add the following line and replace `your_actual_api_key` with your News API key.
+## Usage
 
-     ```env
-     REACT_APP_API_KEY=your_actual_api_key
-     ```
-
-3. **Install dependencies:**
-   - Run the following command to install project dependencies.
-
-     ```bash
-     npm install
-     ```
-
-4. **Start the application:**
-   - Run the following command to start the NewsApp.
-
-     ```bash
-     npm start
-     ```
+- Visit the [NewsApp](#) live demo.
+- Navigate through different news categories to explore headlines.
+- Experience seamless infinite scrolling for more articles.
+- Gain insights into React's functional components and hooks.
 
 ## Contributing
 
-Feel free to contribute to the development of NewsApp. If you encounter any issues or have suggestions, please open an [issue](https://github.com/your-username/NewsApp/issues) or submit a [pull request](https://github.com/ummeTooba/NewsApp/pulls).
+Feel free to contribute to enhance the functionality or fix any issues. Follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/improvement`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/improvement`).
+5. Open a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-# NewsApp
-The NewsApp is built using class components, providing insights into React's class-based architecture. Class components are employed to manage state, handle lifecycle methods, and structure the application in a way that aids comprehension for developers seeking to deepen their understanding of React.
+This project is licensed under the [MIT License](LICENSE).

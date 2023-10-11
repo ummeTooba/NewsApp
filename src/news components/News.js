@@ -1,166 +1,102 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 
-export default class News extends Component {
-  static defaultProps ={
-    country: 'us',
-    pageSize: 8,
-    category: 'general'
+const News = (props) => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [totalResults, setTotalResults] = useState(0);
 
-  }
-  static propTypes ={
-    country: PropTypes.string,
-    pageSize: PropTypes.number,
-    category: PropTypes.string,
-  }
-
-
-  async updateNews() {
-   
-    this.props.setProgress(10);
-    console.log("topload  is working")
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-    this.setState({ loading: true });
-    let data = await fetch(url);
-    this.props.setProgress(40);
-
-    let parseData = await data.json();
-    this.setState({
-      articles: parseData.articles,
-      totalResults: parseData.totalResults,
-      loading: false
-    });
-    this.props.setProgress(100);
-  }
-
-
-  // by using componentdidMount we fetch data from API directly
-  async componentDidMount() {
-    this.updateNews();
-    
-  }
-   capitalizeFirstLetter = (string)=> {
+  const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
-}
-  constructor(props) {
-    super(props);
-    // console.log('i am constructor in news component');
-    this.state = {
-      articles: [],
-      loading: false,
-      page: 1,
-      totalResults: 0
-    };
-    document.title = `${this.capitalizeFirstLetter(this.props.category)} - NewsApp`;
+  };
+
+
+  const updateNews = async () => {
+    props.setProgress(10);
+    // console.log("topload  is working");
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+      try {
+      setLoading(true);
+      let data = await fetch(url);
+      props.setProgress(40);
+      let parseData = await data.json();
+      setArticles(parseData.articles);
+      setTotalResults(parseData.totalResults);
+      setLoading(false);
+      props.setProgress(100);
+    } catch (error) {
+      console.error("Error fetching news:", error);
+      setLoading(false);
+
+    }
+ 
+  };
+  useEffect(() => {
+    document.title = `${capitalizeFirstLetter(props.category)} - NewsApp`;
+    updateNews();
+  }, [props.category]);
+
+  const fetchMoreData = async () => {
+      const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+        setPage(page+1) 
+        let data = await fetch(url);
+        let parsedData = await data.json()
+        setArticles(articles.concat(parsedData.articles))
+        setTotalResults(parsedData.totalResults)
   }
-  handleOnnextClick = async () => {
-    // if (!this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)) {
-    // } else {
-    //   let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${
-    //     this.state.page + 1
-    //   }&pageSize=${this.props.pageSize}`;
-    //   this.setState({loading:true});
-    //   let data = await fetch(url);
-    //   let parseData = await data.json();
-    //   console.log(parseData);
-    //   this.setState({
-    //     page: this.state.page + 1,
-    //     articles: parseData.articles,
-    //     loading:false
-    //   });
-    // }
-    this.setState({ page: this.state.page +1 });
-    this.updateNews();
-  };
-
-  handleOnprevClick = async () => {
-    // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${
-    //   this.state.page - 1
-    // }&pageSize=${this.props.pageSize}`;
-    // this.setState({loading:true});
-    // let data = await fetch(url);
-    // let parseData = await data.json();
-    // console.log(parseData);
-    // this.setState({
-    //   page: this.state.page - 1,
-    //   articles: parseData.articles,
-    //   loading:false
-    // });
-    this.setState({ page: this.state.page -1 });
-    this.updateNews();
-
-  };
-  fetchMoreData = async() => {
-   
-      this.setState({page: this.state.page +1});
-      const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-    this.setState({ loading: true });
-    let data = await fetch(url);
-    let parseData = await data.json();
-    this.setState({
-      articles: this.state.articles.concat(parseData.articles),
-      totalResults: parseData.totalResults,
-      loading: false
-    })}
+     
   
-  render(){
-    return (
-      <>
-      
-        <h1 className="text-center"style={{margin: "30px 0px"}}>NewsApp - Top  {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
-        {/* {<Spinner/>} */}
-       
-        <InfiniteScroll
-          dataLength={this.state.articles.length}
-          next={this.fetchMoreData}
-          hasMore={this.state.articles.length < this.state.totalResults}
-          loader={<Spinner/>}
-        >
-          <div className="container">
-        <div className="row">
-          {this.state.articles.map((element) => (
-            <div className="col-md-4" key={element.url}>
-              <NewsItem
-                title={element.title ? element.title.slice(0, 40) : ""}
-                description={
-                  element.description ? element.description.slice(0, 88) : ""
-                }
-                imageUrl={element.urlToImage}
-                newsUrl={element.url}
-                author={element.author}
-                date ={element.publishedAt}
-                source ={element.source.name}
-              />
-            </div>
-          ))}
+  return (
+    <>
+      <h1
+        className="text-center"
+        style={{ margin: "30px 0px", marginTop: "93px" }}
+      >
+        NewsApp - Top {capitalizeFirstLetter(props.category)} Headlines
+      </h1>
+      {loading && <Spinner />}
+      <InfiniteScroll
+        dataLength={articles.length}
+        next={fetchMoreData}
+        hasMore={articles.length < totalResults}
+        loading={<Spinner />}
+      >
+        <div className="container">
+          <div className="row">
+            {articles.map((element,index) => (
+              <div className="col-md-4" key={`${element.url}-${index}`}>
+                <NewsItem
+                  title={element.title ? element.title.slice(0, 40) : ""}
+                  description={
+                    element.description ? element.description.slice(0, 88) : ""
+                  }
+                  imageUrl={element.urlToImage}
+                  newsUrl={element.url}
+                  author={element.author}
+                  date={element.publishedAt}
+                  source={element.source.name}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        </div>
-        </InfiniteScroll>
-        
-        {/* <div className="container d-flex justify-content-between">
-          <button
-            disabled={this.state.page <= 1}
-            type="button"
-            className="btn btn-dark"
-            onClick={this.handleOnprevClick}
-          >
-            &larr; Previous
-          </button>
-          <button
-            type="button"
-            className="btn btn-dark"
-            onClick={this.handleOnnextClick}
-            disabled={(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))}
-          >
-            Next &rarr;
-          </button>
-        </div> */}
-      
-      </>
-    );
-  }
-}
+      </InfiniteScroll>
+    </>
+  );
+};
+News.defaultProps = {
+  country: "us",
+  pageSize: 8,
+  category: "general",
+};
+News.propTypes = {
+  country: PropTypes.string,
+  pageSize: PropTypes.number,
+  category: PropTypes.string,
+};
+export default News;
